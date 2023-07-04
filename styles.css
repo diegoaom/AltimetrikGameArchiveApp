@@ -1,0 +1,358 @@
+:root {
+
+    --primary-color-light-violet: #BF5FE1;
+    --primary-color-super-violet: #6A20B4;
+
+    --secondary-color-cool-pink: #EFC0FF;
+    --secondary-color-bright-purple: #875CFF;
+    --secondary-color-deep-purple: #39067B;
+    --secondary-color-coral-reef: #FB5F5F;
+    --secondary-color-hey-honey: #FFDC22;
+
+    --neutral-color-black: #151515;
+    --neutral-color-dark-gray: #303030;
+    --neutral-color-gray: #515151;
+    --neutral-color-light-gray: #939393;
+    --neutral-color-white: #FFF;
+
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Archivo', sans-serif;
+}
+
+/*-------------------------------------------------- log in --------------------------------------------------*/
+
+.login-page {
+    display: flex;
+    flex-direction: column;
+    background: url("src/BG.png"), lightgray 0px -34.965px / 129.216% 138.04% no-repeat;
+}
+
+.login-header {
+    display: flex;
+    padding: 1.55rem 1.37rem;
+}
+
+.login-main {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    padding: 2.45rem 3.1rem;
+    margin-right: 6.25rem;
+    margin-top: 3.7rem;
+    flex-shrink: 0;
+}
+
+.login-welcome {
+    color: #FFF;
+    text-align: center;
+    font-size: 1.25rem;
+    font-family: Archivo;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 1.1rem;
+}
+
+.login-welcome-subtext {
+    color: #FFF;
+    text-align: center;
+    font-size: 1rem;
+    font-family: Archivo;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 2.35rem;
+}
+
+.login-input {
+    width: 22.625rem;
+    height: 2.9375rem;
+    flex-shrink: 0;
+}
+
+.email-input {
+    margin-bottom: 1rem;
+}
+
+.password-input {
+    position: relative;
+}
+
+.password-visibility-btn {
+    position: absolute;
+}
+
+.remember-section {
+    margin-top: 0.9rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.remember-left {
+    display: flex;
+    text-align: center;
+}
+
+.remember-text {
+    color: var(--neutral-color-white);
+    font-size: 0.875rem;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.remember-link {
+    color: var(--primary-color-light-violet);
+    font-size: 0.875rem;
+    font-family: Archivo;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: none;
+}
+
+.login-btn {
+    width: 22.625rem;
+    height: 2.9375rem;
+    flex-shrink: 0;
+    border-radius: 0.375rem;
+    background: var(--primary-color-light-violet);
+    color: var(--neutral-color-white);
+    text-align: center;
+    font-size: 1.125rem;
+    font-family: Archivo;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-top: 1.75rem;
+}
+
+.register-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    gap: 1rem;
+}
+
+.register-text {
+    color: #FFF;
+    text-align: right;
+    font-size: 0.875rem;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.register-link {
+    color: var(--primary-color-light-violet);
+    text-align: right;
+    font-size: 0.875rem;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: none;
+}
+
+.linebreak {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.85rem;
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 1.85rem;
+}
+
+.linebreak-text {
+    color: var(--neutral-color-light-gray);
+    text-align: center;
+    font-size: 0.875rem;
+    font-family: Archivo;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 0 1.65rem;
+}
+
+.external-login-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.3rem;
+    border-radius: 0.375rem;
+    border: 2px solid #FFF;
+    padding: 0.6rem;
+    margin-bottom: 1.5rem;
+    background-color: inherit;
+    width: 100%;
+}
+
+.external-login-icon {
+    display: block;
+    margin-left: 3rem;
+}
+
+.external-login-text {
+    display: block;
+    color: var(--neutral-color-white);
+    font-size: 1.125rem;
+    font-family: Archivo;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+/*-------------------------------------------------- main --------------------------------------------------*/
+
+.main-page {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-header {
+    background-color: #1B1B1B;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.3rem;
+    padding-top: 0.24rem;
+    padding-bottom: 0.3rem;
+}
+
+.searchbox {
+    width: 22.625rem;
+    height: 2.9375rem;
+    flex-shrink: 0;
+    margin-right: 2.5rem;
+    border-radius: 0.25rem;
+    background: #FFF;
+}
+
+.logout-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-right: 1.2rem;
+    gap: 1.05rem;
+}
+
+.logout-anchor {
+    color: var(--neutral-color-white);
+    font-size: 1rem;
+    font-family: Archivo;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    text-decoration: none;
+    margin-top: 0.2rem;
+}
+
+.logout-img {
+    width: 3rem;
+    height: 3rem;
+}
+
+.title-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--neutral-color-black);
+    padding: 2.15rem 2.5rem;
+}
+
+.trending-title {
+    color: var(--neutral-color-white);
+    font-size: 3rem;
+    font-family: Archivo;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+
+.trending-text {
+    color: var(--neutral-color-light-gray);
+    font-size: 1.125rem;
+    font-family: Archivo;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.sort-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.sort-btn:hover>svg {
+    transform: scale(1.1);
+}
+
+.sort-btn:focus {
+    outline: 2px dashed #17171D;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--neutral-color-black);
+    padding: 1rem 2.5rem;
+    gap: 1.2rem;
+}
+
+.sidebar-link {
+    color: var(--neutral-color-white);
+    font-size: 1.25rem;
+    font-family: Archivo;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-decoration: none;
+}
+
+.home-link {
+    color: var(--primary-color-light-violet);
+}
+
+.release-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.release-link {
+    color: var(--neutral-color-white);
+    font-size: 1.125rem;
+    font-family: Archivo;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: none;
+}
