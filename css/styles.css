@@ -1,0 +1,740 @@
+:root {
+
+    --primary-color-light-violet: #BF5FE1;
+    --primary-color-super-violet: #6A20B4;
+
+    --secondary-color-cool-pink: #EFC0FF;
+    --secondary-color-bright-purple: #875CFF;
+    --secondary-color-deep-purple: #39067B;
+    --secondary-color-coral-reef: #FB5F5F;
+    --secondary-color-hey-honey: #FFDC22;
+
+    --neutral-color-black: #151515;
+    --neutral-color-dark-gray: #303030;
+    --neutral-color-gray: #515151;
+    --neutral-color-light-gray: #939393;
+    --neutral-color-white: #FFF;
+
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Archivo', sans-serif;
+}
+
+/*-------------------------------------------------- log in --------------------------------------------------*/
+
+.login-page {
+    display: flex;
+    flex-direction: column;
+    background: url("src/BG.png"), lightgray 0px -34.965px / 129.216% 138.04% no-repeat;
+}
+
+.login-header {
+    display: flex;
+    padding: 1.55rem 1.37rem;
+}
+
+.login-main {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    padding: 2.45rem 3.1rem;
+    margin-right: 6.25rem;
+    margin-top: 3.7rem;
+    flex-shrink: 0;
+}
+
+.login-welcome {
+    color: #FFF;
+    text-align: center;
+    font-size: 1.25rem;
+    font-family: Archivo;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 1.1rem;
+}
+
+.login-welcome-subtext {
+    color: #FFF;
+    text-align: center;
+    font-size: 1rem;
+    font-family: Archivo;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 2.35rem;
+}
+
+.login-input {
+    width: 22.625rem;
+    height: 2.9375rem;
+    flex-shrink: 0;
+}
+
+.email-input {
+    margin-bottom: 1rem;
+}
+
+.password-input {
+    position: relative;
+}
+
+.password-visibility-btn {
+    position: absolute;
+}
+
+.remember-section {
+    margin-top: 0.9rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.remember-left {
+    display: flex;
+    text-align: center;
+}
+
+.remember-text {
+    color: var(--neutral-color-white);
+    font-size: 0.875rem;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.remember-link {
+    color: var(--primary-color-light-violet);
+    font-size: 0.875rem;
+    font-family: Archivo;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: none;
+}
+
+.login-btn {
+    width: 22.625rem;
+    height: 2.9375rem;
+    flex-shrink: 0;
+    border-radius: 0.375rem;
+    background: var(--primary-color-light-violet);
+    color: var(--neutral-color-white);
+    text-align: center;
+    font-size: 1.125rem;
+    font-family: Archivo;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-top: 1.75rem;
+}
+
+.register-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    gap: 1rem;
+}
+
+.register-text {
+    color: #FFF;
+    text-align: right;
+    font-size: 0.875rem;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.register-link {
+    color: var(--primary-color-light-violet);
+    text-align: right;
+    font-size: 0.875rem;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: none;
+}
+
+.linebreak {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.85rem;
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 1.85rem;
+}
+
+.linebreak-text {
+    color: var(--neutral-color-light-gray);
+    text-align: center;
+    font-size: 0.875rem;
+    font-family: Archivo;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 0 1.65rem;
+}
+
+.external-login-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.3rem;
+    border-radius: 0.375rem;
+    border: 2px solid #FFF;
+    padding: 0.6rem;
+    margin-bottom: 1.5rem;
+    background-color: inherit;
+    width: 100%;
+}
+
+.external-login-icon {
+    display: block;
+    margin-left: 3rem;
+}
+
+.external-login-text {
+    display: block;
+    color: var(--neutral-color-white);
+    font-size: 1.125rem;
+    font-family: Archivo;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+/*-------------------------------------------------- main --------------------------------------------------*/
+
+.main-page {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-header {
+    background-color: #1B1B1B;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.3rem;
+    padding-top: 0.22rem;
+    padding-bottom: 0.35rem;
+}
+
+.searchbox {
+    width: 22.625rem;
+    height: 2.9375rem;
+    flex-shrink: 0;
+    margin-right: 2.5rem;
+    border-radius: 0.25rem;
+    background: #FFF;
+}
+
+.logout-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-right: 0.2rem;
+    gap: 1.05rem;
+}
+
+.logout-anchor {
+    color: var(--neutral-color-white);
+    font-size: 1rem;
+    font-family: Archivo;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    text-decoration: none;
+    margin-top: 0.2rem;
+}
+
+.logout-img {
+    width: 3rem;
+    height: 3rem;
+}
+
+.title-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--neutral-color-black);
+    padding-left: 2.5rem;
+    padding-right: 1.55rem;
+    padding-top: 1.5rem;
+    padding-bottom: 0.4rem;
+}
+
+.title-section {
+    padding-bottom: 1.2rem;
+}
+
+.trending-title {
+    color: var(--neutral-color-white);
+    font-size: 3rem;
+    font-family: Archivo;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.trending-text {
+    color: var(--neutral-color-light-gray);
+    font-size: 1.125rem;
+    font-family: Archivo;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.sort-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.theme-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.81rem;
+    margin-top: 1.2rem;
+}
+
+.theme-text {
+    color: #FFF;
+    text-align: right;
+    font-size: 0.9375rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+/* The switch - the box around the slider */
+.toggle {
+    --width: 2.75rem;
+    --height: 1.375rem;
+
+    position: relative;
+    display: inline-block;
+    width: var(--width);
+    height: var(--height);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    border-radius: var(--height);
+    cursor: pointer;
+}
+
+.toggle input {
+    display: none;
+}
+
+.toggle .slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--height);
+    background-color: #ccc;
+    transition: all 0.4s ease-in-out;
+}
+
+.toggle .slider::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(var(--height));
+    height: calc(var(--height));
+    border-radius: calc(var(--height) / 2);
+    background-color: #fff;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s ease-in-out;
+}
+
+.toggle input:checked+.slider {
+    background-color: #5F81FB;
+}
+
+.toggle input:checked+.slider::before {
+    transform: translateX(calc(var(--width) - var(--height)));
+}
+
+.toggle .labels {
+    position: absolute;
+    top: 8px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 12px;
+    font-family: sans-serif;
+    transition: all 0.4s ease-in-out;
+}
+
+.toggle .labels::after {
+    content: attr(data-off);
+    font-size: 8px;
+    position: absolute;
+    right: 5px;
+    color: #4d4d4d;
+    opacity: 1;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    transition: all 0.4s ease-in-out;
+}
+
+.toggle .labels::before {
+    content: attr(data-on);
+    font-size: 8px;
+    position: absolute;
+    left: 5px;
+    color: #ffffff;
+    opacity: 0;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.4);
+    transition: all 0.4s ease-in-out;
+}
+
+.toggle input:checked~.labels::after {
+    opacity: 0;
+}
+
+.toggle input:checked~.labels::before {
+    opacity: 1;
+}
+
+/* The switch - the box around the slider */
+
+.sort-button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 1.5rem;
+    padding-top: 1.7rem;
+}
+
+.sort-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.sort-btn:hover>svg {
+    transform: scale(1.1);
+}
+
+.sort-btn:focus {
+    outline: 2px dashed #17171D;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--neutral-color-black);
+    padding: 0.9rem 2.5rem;
+    gap: 1.19rem;
+    height: 100vh;
+}
+
+.sidebar-link {
+    color: var(--neutral-color-white);
+    font-size: 1.25rem;
+    font-family: Archivo;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-decoration: none;
+}
+
+.home-link {
+    color: var(--primary-color-light-violet);
+}
+
+.release-section,
+.popular-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.release-section {
+    margin-top: 1.45rem;
+    gap: 1.06rem;
+    margin-bottom: 2.25rem;
+}
+
+.sidebar-icon {
+    margin-right: 0.5rem;
+}
+
+.sidebar-sub-link {
+    display: flex;
+    align-items: center;
+}
+
+.release-link,
+.popular-link {
+    color: var(--neutral-color-white);
+    font-size: 1.125rem;
+    font-family: Archivo;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: none;
+}
+
+.popular-section {
+    margin-top: 0.4rem;
+    gap: 1.05rem;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 1.6rem;
+    padding-top: 0.9rem;
+    background-color: #151515;
+    gap: 1.5rem;
+    overflow: hidden;
+}
+
+.card {
+    display: grid;
+    grid-template-rows: 57% 43%;
+    border-radius: 0.75rem;
+    background: #303030;
+    flex: 0 0 31.2%;
+    height: 19.625rem;
+}
+
+.card-img-container {
+    border-top-left-radius: 0.75rem;
+    border-top-right-radius: 0.75rem;
+}
+
+.card-information {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.card-title {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.game-title {
+    color: #FFF;
+    font-family: Archivo;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.game-ranking {
+    color: var(--light-violet, #BF5FE1);
+    text-align: right;
+    font-family: exo;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.card-information-release {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 0.75rem;
+}
+
+.game-release {
+    color: #939393;
+    font-family: Archivo;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-left: 0.25rem;
+}
+
+.game-release-date {
+    color: #FFF;
+    font-family: Archivo;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.card-information-genres {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 0.75rem;
+    padding-top: 1px;
+
+}
+
+.game-genres {
+    color: #939393;
+    font-family: Archivo;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-align: left;
+    margin-left: 0.25rem;
+}
+
+.game-genres-container {
+    color: #FFF;
+    font-family: Archivo;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.skeleton {
+    animation: skeleton-loading 1s linear infinite alternate;
+    border-radius: 0.75rem;
+    opacity: 0.5;
+    background: linear-gradient(270deg, rgba(219, 219, 219, 0.05) 0%, #DBDBDB 50%);
+}
+
+@keyframes skeleton-loading {
+    0% {
+        background-color: rgba(219, 219, 219, 0.9);
+    }
+
+    100% {
+        background-color: rgba(219, 219, 219, 0.05);
+    }
+}
+
+.skeleton-title,
+.skeleton-text {
+    width: 100%;
+    border-radius: 1.875rem;
+    background: white;
+    opacity: 1;
+
+}
+
+.skeleton-title {
+    height: 1.25rem;
+}
+
+.skeleton-text {
+    height: 0.9rem;
+
+    padding-left: 0rem;
+    gap: 0rem;
+}
+
+.card-information-genres.skeleton-genre-div {
+
+    padding-left: 0;
+    gap: 0;
+    margin: 0 1rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.skeleton-circle {
+    width: 1.25rem;
+    height: 1rem;
+    border-radius: 1.40625rem;
+    background: white;
+    opacity: 1;
+}
+
+.ellipsis {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.genres-hoverable {
+    position: relative;
+    display: inline-block;
+}
+
+.genres-hoverable .genres-tooltip {
+    visibility: hidden;
+    width: max-content;
+    background-color: #1B1B1B;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 0.625rem;
+    position: absolute;
+    z-index: 1;
+    top: 135%;
+    left: 20%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.genres-hoverable .genres-tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 20%;
+    margin-left: -5px;
+}
+
+.genres-hoverable:hover .genres-tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.genres-tooltip {
+    width: 150rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.625rem;
+    border-radius: 0.75rem;
+    background: #1B1B1B;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+}
+
+.genre-hover-text {
+    color: #FFF;
+    text-align: center;
+    font-family: Archivo;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    border-radius: 6.25rem;
+    background: #BF5FE1;
+    padding: 0.28125rem 0.625rem;
+}
