@@ -4,6 +4,7 @@ const RAWG_API_URL = "https://api.rawg.io/api/games?key=95715731c840405fb598b264
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec']
 let gamesArray = [];
 const mainContainer = document.querySelector("#container");
+const searchBox = document.querySelector("#searchbox");
 
 const getJSONData = async (url) => {
     let promise = await fetch(url);
@@ -41,6 +42,7 @@ const formatDate = (str) => {
 
 const showCards = (arr) => {
     let htmlContentToAppend = "";
+    mainContainer.innerHTML = "";
 
     for (let element of arr) {
 
@@ -88,9 +90,22 @@ const skeletonMaker = (quantity) => {
 
 };
 
+const searchNormalize = (string, keyword) => {
+    console.log(string);
+    return string.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().includes(keyword.toLowerCase());
+}
+
+const searchGames = () => {
+    let searchedGamesArray = gamesArray.filter(e => searchNormalize(e.name, searchBox.value));
+    showCards(searchedGamesArray);
+}
 
 
 document.addEventListener("DOMContentLoaded", function () {
     skeletonMaker(9);
     gamesArray = getJSONData(RAWG_API_URL);
 });
+
+searchBox.addEventListener("input", () => {
+    searchGames();
+})
