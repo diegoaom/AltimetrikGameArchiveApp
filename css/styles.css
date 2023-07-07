@@ -307,7 +307,7 @@
     line-height: normal;
 }
 
-.sort-section {
+.display-section {
     display: flex;
     flex-direction: column;
 }
@@ -423,7 +423,7 @@
 
 /* The switch - the box around the slider */
 
-.sort-button-container {
+.display-button-container {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -431,17 +431,17 @@
     padding-top: 1.7rem;
 }
 
-.sort-btn {
+.display-btn {
     border: none;
     background: none;
     cursor: pointer;
 }
 
-.sort-btn:hover>svg {
+.display-btn:hover>svg {
     transform: scale(1.1);
 }
 
-.sort-btn:focus {
+.display-btn:focus {
     outline: 2px dashed #17171D;
 }
 
