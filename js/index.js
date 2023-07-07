@@ -1,7 +1,7 @@
 import { platformAppend } from "./modules/platforms.js";
 
 const RAWG_API_URL = "https://api.rawg.io/api/games?key=95715731c840405fb598b2640a161012";
-const MONTHS = [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec' ]
+const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec']
 let gamesArray = [];
 const mainContainer = document.querySelector("#container");
 
@@ -14,7 +14,7 @@ const getJSONData = async (url) => {
 
 const showGenres = (arr) => {
     let genres = [];
-    for (let element of arr){
+    for (let element of arr) {
         genres.push(element.name);
     }
     genres = genres.toString();
@@ -24,7 +24,7 @@ const showGenres = (arr) => {
 
 const appendGenresTooltip = (arr) => {
     let genresToAppend = [];
-    for (let element of arr){
+    for (let element of arr) {
         genresToAppend += `
         <span class="genre-hover-text">${element.name}</span>
         `
@@ -35,7 +35,7 @@ const appendGenresTooltip = (arr) => {
 
 const formatDate = (str) => {
     let dates = str.split('-');
-    let month = MONTHS[parseInt(dates[1])-1]
+    let month = MONTHS[parseInt(dates[1]) - 1]
     return `${month} ${dates[2]}, ${dates[0]}`
 }
 
@@ -76,9 +76,21 @@ const showCards = (arr) => {
     }
 
     mainContainer.innerHTML = htmlContentToAppend;
-}
+};
+
+const skeletonMaker = (quantity) => {
+
+    const skeleton = document.querySelector("#skeleton-template");
+
+    for (let i = 0; i < quantity; i++) {
+        mainContainer.appendChild(skeleton.cloneNode(true));
+    };
+
+};
+
 
 
 document.addEventListener("DOMContentLoaded", function () {
+    skeletonMaker(9);
     gamesArray = getJSONData(RAWG_API_URL);
 });

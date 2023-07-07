@@ -569,7 +569,7 @@
 .card-information-release {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    padding: 0.75rem;
+    padding: 0 0.75rem;
 }
 
 .game-release {
@@ -580,6 +580,7 @@
     font-weight: 500;
     line-height: normal;
     margin-left: 0.25rem;
+    padding-top: 0.75rem;
 }
 
 .game-release-date {
@@ -589,13 +590,27 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    padding-top: 0.75rem;
+}
+
+.game-platforms {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding-top: 0.5rem;
+}
+
+.platform-icons {
+    width: 1.75rem;
+    height: 1rem;
+    flex-shrink: 0;
 }
 
 .card-information-genres {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    padding: 0.75rem;
-    padding-top: 1px;
+    padding: 0.8rem 0.75rem;
 
 }
 
