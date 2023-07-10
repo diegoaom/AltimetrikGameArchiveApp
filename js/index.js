@@ -5,6 +5,25 @@ const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept'
 let gamesArray = [];
 const mainContainer = document.querySelector("#container");
 const searchBox = document.querySelector("#searchbox");
+const singleColumnButton = document.querySelector("#single-display-btn");
+const multipleColumnButton = document.querySelector("#multiple-display-btn");
+const singleColumnPath = document.querySelector("#display-single-path");
+const multipleColumnPath = document.querySelector("#display-multiple-path");
+const openMobileMenuButton = document.querySelector("#toggle-menu-button");
+const closeMobileMenuButton = document.querySelector("#mobile-close-menu");
+const navbar = document.querySelector("#navbar");
+
+export const singleColumnDisplay = () => {
+    singleColumnPath.classList.add("active-display-path");
+    multipleColumnPath.classList.remove("active-display-path");
+    mainContainer.classList.add("single-column");
+}
+
+export const multipleColumnDisplay = () => {
+    multipleColumnPath.classList.add("active-display-path");
+    singleColumnPath.classList.remove("active-display-path");
+    mainContainer.classList.remove("single-column");
+}
 
 const getJSONData = async (url) => {
     let promise = await fetch(url);
@@ -56,19 +75,21 @@ const showCards = (arr) => {
                 <p class="game-title ellipsis">${element.name}</p>
                 <p class="game-ranking">#${element.rating_top}</p>
             </div>
-            <div class="card-information-release">
-                <p class="game-release">Release date:</p>
-                <p class="game-release-date">${formatDate(element.released)}</p>
+            <div class="grid-card-information">
+                <div class="card-information-release">
+                    <p class="game-release">Release date:</p>
+                    <p class="game-release-date">${formatDate(element.released)}</p>
+                </div>
                 <div class="game-platforms">
                 ${platformAppend(element.platforms)}
                 </div>
-            </div>
-            <div class="card-information-genres">
-                <p class="game-genres">Genres:</p>
-                <div class="game-genres-container genres-hoverable">
-                ${showGenres(element.genres)}
-                    <div class="genres-tooltip">
-                    ${appendGenresTooltip(element.genres)}
+                <div class="card-information-genres">
+                    <p class="game-genres">Genres:</p>
+                    <div class="game-genres-container genres-hoverable">
+                    ${showGenres(element.genres)}
+                        <div class="genres-tooltip">
+                        ${appendGenresTooltip(element.genres)}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -100,7 +121,6 @@ const searchGames = () => {
     showCards(searchedGamesArray);
 }
 
-
 document.addEventListener("DOMContentLoaded", function () {
     skeletonMaker(9);
     gamesArray = getJSONData(RAWG_API_URL);
@@ -108,4 +128,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
 searchBox.addEventListener("input", () => {
     searchGames();
+})
+
+singleColumnButton.addEventListener("click", () => {
+    singleColumnDisplay();
+})
+
+multipleColumnButton.addEventListener("click", () => {
+    multipleColumnDisplay();
+})
+
+openMobileMenuButton.addEventListener("click", ()=> {
+    navbar.classList.add("active-menu");
+})
+
+closeMobileMenuButton.addEventListener("click", ()=> {
+    navbar.classList.remove("active-menu");
 })
