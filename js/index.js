@@ -29,6 +29,7 @@ const getJSONData = async (url) => {
     let promise = await fetch(url);
     let result = await promise.json();
     gamesArray = result.results;
+    console.log(gamesArray);
     showCards(gamesArray);
 }
 
