@@ -12,6 +12,12 @@ const multipleColumnPath = document.querySelector("#display-multiple-path");
 const openMobileMenuButton = document.querySelector("#toggle-menu-button");
 const closeMobileMenuButton = document.querySelector("#mobile-close-menu");
 const navbar = document.querySelector("#navbar");
+const autocompleteBox = document.querySelector("#autocomplete-box");
+const searchButton = document.querySelector("#searchButton");
+const fade = document.querySelector("#fade");
+const searchBoxContainer = document.querySelector("#searchbox-container");
+const toggleSearchButton = document.querySelector("#toggle-search-button");
+const mainHeader = document.querySelector(".main-header");
 
 export const singleColumnDisplay = () => {
     singleColumnPath.classList.add("active-display-path");
@@ -112,14 +118,50 @@ const skeletonMaker = (quantity) => {
 
 };
 
-const searchNormalize = (string, keyword) => {
-    console.log(string);
-    return string.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().includes(keyword.toLowerCase());
+const searchGames = async () => {
+    let promise = await fetch(`${RAWG_API_URL}&search=${searchBox.value}`);
+    let result = await promise.json();
+    return result.results;
 }
 
-const searchGames = () => {
-    let searchedGamesArray = gamesArray.filter(e => searchNormalize(e.name, searchBox.value));
+const showSearchedGames = async () => {
+    let searchedGamesArray = await searchGames();
     showCards(searchedGamesArray);
+}
+
+const showAutoComplete = async () => {
+    if (searchBox.value === "") {
+        autocompleteBox.innerHTML = "";
+    } else {
+        let autoComplete = await searchGames();
+        autocompleteBox.innerHTML = "";
+        let autoCompleteListToAppend = "";
+
+        for (let i = 0; i <= 3; i++) {
+            autoCompleteListToAppend += `<li class="autocomplete-item">${autoComplete[i].name}</li>`;
+        }
+
+        autocompleteBox.innerHTML = autoCompleteListToAppend;
+    }
+}
+
+const showHideSearchMobile = () => {
+    searchBoxContainer.classList.remove("tablet-search");
+    searchBoxContainer.classList.toggle("mobile-search");
+    document.documentElement.style.setProperty("--searchbox-top-distance", `${mainHeader.offsetHeight + 8}px`);
+    if (searchBoxContainer.classList.value.includes("mobile-search")){
+        searchBox.focus();
+    }
+}
+
+const showHideSearchTablet = () => {
+    searchBoxContainer.classList.remove("mobile-search");
+    searchBoxContainer.classList.toggle("tablet-search");
+    document.documentElement.style.setProperty("--searchbox-top-distance", `${toggleSearchButton.getBoundingClientRect().top} px`);
+    document.documentElement.style.setProperty("--searchbox-right-distance", `${document.body.offsetWidth - toggleSearchButton.getBoundingClientRect().right}px`);
+    if (searchBoxContainer.classList.value.includes("tablet-search")){
+        searchBox.focus();
+    }
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -127,8 +169,44 @@ document.addEventListener("DOMContentLoaded", function () {
     gamesArray = getJSONData(RAWG_API_URL);
 });
 
+searchBox.addEventListener("keypress", (e) => {
+
+    if (e.key === "Enter") {
+        showSearchedGames();
+        searchBox.value = "";
+        searchBoxContainer.classList.remove("mobile-search");
+        searchBoxContainer.classList.remove("tablet-search");
+    }
+
+})
+
+searchButton.addEventListener("click", () => {
+    showSearchedGames();
+    searchBox.value = "";
+    searchBoxContainer.classList.remove("mobile-search");
+    searchBoxContainer.classList.remove("tablet-search");
+})
+
 searchBox.addEventListener("input", () => {
-    searchGames();
+    showAutoComplete();
+})
+
+searchBox.addEventListener("focus", () => {
+    autocompleteBox.style.display = "block";
+    fade.style.display = "flex";
+    searchBox.style.zIndex = "8";
+    autocompleteBox.style.zIndex = "8";
+    searchButton.style.zIndex = "8";
+})
+
+searchBox.addEventListener("focusout", () => {
+    autocompleteBox.style.display = "none";
+    fade.style.display = "none";
+    searchBox.style.zIndex = "5";
+    autocompleteBox.style.zIndex = "5";
+    searchButton.style.zIndex = "5";
+    searchBoxContainer.classList.remove("mobile-search");
+    searchBoxContainer.classList.remove("tablet-search");
 })
 
 singleColumnButton.addEventListener("click", () => {
@@ -139,10 +217,20 @@ multipleColumnButton.addEventListener("click", () => {
     multipleColumnDisplay();
 })
 
-openMobileMenuButton.addEventListener("click", ()=> {
+openMobileMenuButton.addEventListener("click", () => {
     navbar.classList.add("active-menu");
 })
 
-closeMobileMenuButton.addEventListener("click", ()=> {
+closeMobileMenuButton.addEventListener("click", () => {
     navbar.classList.remove("active-menu");
+})
+
+toggleSearchButton.addEventListener("click", () => {
+
+    if (document.body.offsetWidth <= 320) {
+        showHideSearchMobile();
+    } else {
+        showHideSearchTablet();
+    }
+
 })

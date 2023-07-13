@@ -15,6 +15,8 @@
     --neutral-color-light-gray: #939393;
     --neutral-color-white: #FFF;
 
+    --searchbox-top-distance: 0;
+    --searchbox-right-distance: "";
 }
 
 * {
@@ -238,6 +240,16 @@
     padding: 0 1.3rem;
     padding-top: 0.22rem;
     padding-bottom: 0.35rem;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
+.searchbox-container {
+    position: relative;
+    z-index: 9;
+    top: 0;
 }
 
 .searchbox {
@@ -247,6 +259,68 @@
     margin-right: 2.5rem;
     border-radius: 0.25rem;
     background: #FFF;
+    padding-left: 2.5rem;
+    color: #3D3D3D;
+    font-family: Archivo;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    border: none;
+    position: relative;
+}
+
+.searchbox:focus-visible {
+    outline: none;
+}
+
+.search-button {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.5rem;
+}
+
+.autocomplete-box {
+    width: 22.625rem;
+    background: #FFF;
+    list-style: none;
+    position: absolute;
+    top: 3.3rem;
+    border-radius: 0.25rem;
+    display: none;
+}
+
+.autocomplete-show {
+    display: block;
+}
+
+.autocomplete-item {
+    padding: 0.62rem 0.87rem;
+    color: #3D3D3D;
+    font-family: Archivo;
+    font-size: 0.9375rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+input[type=search]::-ms-clear {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+input[type=search]::-ms-reveal {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    display: none;
 }
 
 .toggle-search-container,
@@ -443,7 +517,8 @@
 .toggle-search-button,
 .mobile-close-menu,
 .close-modal,
-.modal-game-sub-buttons>button {
+.modal-game-sub-buttons>button,
+.search-button {
     border: none;
     background: none;
     cursor: pointer;
@@ -882,29 +957,32 @@
     align-self: flex-start;
 }
 
-.modal {
-    position: absolute;
-    z-index: 8;
+.fade {
+    position: fixed;
+    inset: 0 0 0 0;
+    z-index: 7;
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.4);
     display: flex;
     justify-content: center;
     align-items: center;
+    display: none;
+
 }
 
 .modal-content {
-    width: 75%;
+    width: 75vw;
     background-image: url("../src/biomutant.png");
     background-repeat: no-repeat;
-    background-size: contain;
-    height: 78%;
+    background-size: cover;
     border-radius: 1.5rem;
+    display: none;
 }
 
 .modal-background-filter {
     border-radius: 0.96rem;
-    background: linear-gradient(180deg, rgba(48,48,48,0.2) 0%, rgba(48,48,48,0.4)  20.9%, rgba(48,48,48,1) 65%, rgba(48,48,48,1) 100%);
+    background: linear-gradient(180deg, rgba(48, 48, 48, 0.2) 0%, rgba(48, 48, 48, 0.4) 20.9%, rgba(48, 48, 48, 1) 65%, rgba(48, 48, 48, 1) 100%);
     background-size: contain;
     width: 100%;
     height: 100%;
@@ -1113,6 +1191,18 @@
         flex: 0 0 45%;
     }
 
+    .searchbox-container.tablet-search {
+        display: block;
+        position: fixed;
+        z-index: 5;
+        top: var(--searchbox-top-distance);
+        right: var(--searchbox-right-distance);
+    }
+
+    .searchbox-container.tablet-search .searchbox {
+        margin-right: 0;
+    }
+
 }
 
 /*-------------------------------------------------- media queries mobile --------------------------------------------------*/
@@ -1161,6 +1251,21 @@
 
     .searchbox-container {
         display: none;
+    }
+
+    .searchbox-container.mobile-search {
+        display: block;
+        position: fixed;
+        z-index: 5;
+        top: var(--searchbox-top-distance);
+    }
+
+    .searchbox-container.mobile-search .searchbox {
+        width: 90vw;
+    }
+
+    .searchbox-container.mobile-search .autocomplete-box {
+        width: 90vw;
     }
 
     .card-container {
