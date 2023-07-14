@@ -18,6 +18,7 @@ const fade = document.querySelector("#fade");
 const searchBoxContainer = document.querySelector("#searchbox-container");
 const toggleSearchButton = document.querySelector("#toggle-search-button");
 const mainHeader = document.querySelector(".main-header");
+const modalFade = document.querySelector("#modal-fade");
 
 export const singleColumnDisplay = () => {
     singleColumnPath.classList.add("active-display-path");
