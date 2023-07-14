@@ -21,12 +21,12 @@
         </div>
     </div>
     <div class="login-main">
-        <form class="login-form" action="">
+        <form class="login-form" action="" onsubmit="return false">
             <h1 class="login-welcome">Welcome! Log in or register</h1>
             <p class="login-welcome-subtext">Log in to find the games you’re looking for!</p>
-            <input class="login-input email-input" type="text" placeholder="Email">
+            <input id="email-input" class="login-input email-input" type="text" placeholder="Email">
             <div class="password-input-container">
-                <input class="login-input password-input" type="password" placeholder="Password">
+                <input id="password-input"  class="login-input password-input" type="password" placeholder="Password">
                 <button class="password-visibility-btn">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -45,7 +45,7 @@
                 </div>
                 <a class="remember-link" href="#">Forgot password?</a>
             </div>
-            <button class="login-btn">Log in</button>
+            <button id="login-btn" class="login-btn" type="button">Log in</button>
             <div class="register-section">
                 <p class="register-text">Not registered yet?</p>
                 <a class="register-link" href="#">Register now</a>
@@ -88,6 +88,7 @@
             </button>
         </form>
     </div>
+    <script src="js/login.js" type="module"></script>
 </body>
 
 </html>
