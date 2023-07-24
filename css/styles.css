@@ -46,6 +46,7 @@
     top: 0;
     right: 0;
     left: 0;
+    z-index: 5;
 }
 
 .searchbox-container {
@@ -165,6 +166,11 @@ input[type="search"]::-webkit-search-results-decoration {
     padding-right: 1.55rem;
     padding-top: 1.5rem;
     padding-bottom: 0.4rem;
+    position: fixed;
+    top: 79px;
+    right: 0;
+    left: 0;
+    z-index: 5;
 }
 
 .title-section {
@@ -354,6 +360,10 @@ input[type="search"]::-webkit-search-results-decoration {
     padding: 0.9rem 2.5rem;
     gap: 1.19rem;
     height: 100vh;
+    position: fixed;
+    top: 221px;
+    left: 0;
+    z-index: 6;
 }
 
 .sidebar-link {
@@ -416,6 +426,8 @@ input[type="search"]::-webkit-search-results-decoration {
     background-color: #151515;
     gap: 1.5rem;
     overflow: hidden;
+    position: relative;
+    top: 223px;
 }
 
 .single-column {
@@ -1252,6 +1264,7 @@ input[type="search"]::-webkit-search-results-decoration {
         padding: 0;
         justify-content: center;
         gap: 1rem;
+        top: 157px;
     }
 
     .card {
@@ -1307,6 +1320,7 @@ input[type="search"]::-webkit-search-results-decoration {
 
     .sidebar {
         display: none;
+        position: static;
     }
 
     .sidebar-link {
@@ -1364,6 +1378,7 @@ input[type="search"]::-webkit-search-results-decoration {
         padding: 1rem;
         padding-top: 1.3rem;
         padding-bottom: 1.05rem;
+        top: 50px;
     }
 
     .trending-title {
