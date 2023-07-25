@@ -91,6 +91,7 @@
     top: 3.3rem;
     border-radius: 0.25rem;
     display: none;
+    z-index: 8;
 }
 
 .autocomplete-show {
@@ -170,7 +171,7 @@ input[type="search"]::-webkit-search-results-decoration {
     top: 79px;
     right: 0;
     left: 0;
-    z-index: 5;
+    z-index: 3;
 }
 
 .title-section {
@@ -326,7 +327,9 @@ input[type="search"]::-webkit-search-results-decoration {
 .mobile-close-menu,
 .close-modal,
 .modal-game-sub-buttons>button,
-.search-button {
+.search-button,
+.modal-logout-close-button,
+.logout-button {
     border: none;
     background: none;
     cursor: pointer;
@@ -363,7 +366,7 @@ input[type="search"]::-webkit-search-results-decoration {
     position: fixed;
     top: 221px;
     left: 0;
-    z-index: 6;
+    z-index: 3;
 }
 
 .sidebar-link {
@@ -567,7 +570,6 @@ input[type="search"]::-webkit-search-results-decoration {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    text-align: right;
 }
 
 .skeleton {
@@ -1009,6 +1011,71 @@ input[type="search"]::-webkit-search-results-decoration {
     height: 13.5625rem;
 }
 
+.modal-logout {
+    background-color: var(--neutral-color-white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 24.125rem;
+    height: 17.6875rem;
+    flex-shrink: 0;
+    border-radius: 0.75rem;
+    box-shadow: 0px 0px 8px 0px rgba(120, 120, 120, 0.25);
+    padding: 0.88rem;
+}
+
+.modal-logout-close-button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+}
+
+.modal-logout-title {
+    color: #000;
+    text-align: center;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Archivo;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 0.5rem;
+}
+
+.modal-logout-text {
+    color: #000;
+    text-align: center;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Archivo;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    margin-bottom: 1rem;
+    width: 39ch;
+}
+
+.logout-button {
+    color: var(--primary-color-light-violet);
+    text-align: center;
+    font-family: Archivo;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    border-radius: 0.375rem;
+    width: 22.625rem;
+    height: 2.9375rem;
+    flex-shrink: 0;
+    margin-bottom: 0.5rem;
+}
+
+.yes-button {
+    background: var(--light-violet, #BF5FE1);
+    color: #FFF;
+}
+
 
 /*-------------------------------------------------- media queries tablet --------------------------------------------------*/
 
@@ -1038,6 +1105,7 @@ input[type="search"]::-webkit-search-results-decoration {
 
     .sidebar {
         display: none;
+        position: static;
     }
 
     .card {
