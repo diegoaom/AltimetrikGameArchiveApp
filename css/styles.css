@@ -329,7 +329,8 @@ input[type="search"]::-webkit-search-results-decoration {
 .modal-game-sub-buttons>button,
 .search-button,
 .modal-logout-close-button,
-.logout-button {
+.logout-button,
+.back-modal {
     border: none;
     background: none;
     cursor: pointer;
@@ -1075,6 +1076,53 @@ input[type="search"]::-webkit-search-results-decoration {
     background: var(--light-violet, #BF5FE1);
     color: #FFF;
 }
+
+.modal-description {
+    width: 67.25rem;
+    height: 49.5625rem;
+    flex-shrink: 0;
+    border-radius: 24px;
+    background: #303030;
+    display: flex;
+    flex-direction: column;
+}
+
+.navigation-modal-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 1.5rem;
+}
+
+.description-modal-platforms {
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+    margin-top: 2.25rem;
+}
+
+.description-modal-title {
+    color: #FFF;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Archivo;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+.description-modal-text {
+    color: #FFF;
+    font-family: Open Sans;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
 
 
 /*-------------------------------------------------- media queries tablet --------------------------------------------------*/
