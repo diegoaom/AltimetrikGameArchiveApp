@@ -422,16 +422,32 @@ input[type="search"]::-webkit-search-results-decoration {
     gap: 1.05rem;
 }
 
-.card-container {
+.main-container {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     padding-left: 1.6rem;
     padding-top: 0.9rem;
+    padding-bottom: 1.5rem;
     background-color: #151515;
-    gap: 1.5rem;
     overflow: hidden;
     position: relative;
     top: 223px;
+    width: 100%;
+}
+
+.card-container,
+.skeleton-loader {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #151515;
+    gap: 1.5rem;
+    overflow: hidden;
+    width: 100%;
+}
+
+.skeleton-loader {
+    padding-top: 1.5rem;
+    display: none;
 }
 
 .single-column {
@@ -440,7 +456,7 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 .single-column>.card {
-    width: 50%;
+    width: 60%;
     justify-self: center;
     height: 32.25rem;
 }
@@ -463,6 +479,7 @@ input[type="search"]::-webkit-search-results-decoration {
     background: #303030;
     flex: 0 0 31.2%;
     height: 19.625rem;
+    cursor: pointer;
 }
 
 .card-img-container {
@@ -549,7 +566,6 @@ input[type="search"]::-webkit-search-results-decoration {
     display: grid;
     grid-template-columns: 1fr 2fr;
     padding: 0.8rem 0.75rem;
-    grid-area: genres;
 
 }
 
@@ -571,6 +587,24 @@ input[type="search"]::-webkit-search-results-decoration {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+}
+
+.card-description-container {
+    padding: 1rem;
+    display: none;
+}
+
+.card-description-text {
+    color: #FFF;
+    font-family: Archivo;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.1375rem;
+}
+
+.single-column .card-description-container {
+    display: flex;
 }
 
 .skeleton {
@@ -775,7 +809,7 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 .fade,
-.modal-fade {
+.modal-container {
     position: fixed;
     inset: 0 0 0 0;
     z-index: 7;
@@ -786,15 +820,16 @@ input[type="search"]::-webkit-search-results-decoration {
     justify-content: center;
     align-items: center;
     overflow: auto;
+    display: none;
 }
 
 .fade {
     display: none;
 }
 
-.modal-content {
+.modal-card {
     width: 75vw;
-    background-image: url("../src/biomutant.png");
+    background-color: rgba(48, 48, 48, 1);
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 1.5rem;
@@ -1127,7 +1162,7 @@ input[type="search"]::-webkit-search-results-decoration {
 
 /*-------------------------------------------------- media queries tablet --------------------------------------------------*/
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1219px) {
 
     .main-header {
         display: grid;
@@ -1156,6 +1191,10 @@ input[type="search"]::-webkit-search-results-decoration {
         position: static;
     }
 
+    .card-container {
+        padding-left: 2.5rem;
+    }
+
     .card {
         flex: 0 0 45%;
     }
@@ -1172,13 +1211,11 @@ input[type="search"]::-webkit-search-results-decoration {
         margin-right: 0;
     }
 
-
-
-    .modal-fade {
+    .modal-container {
         align-items: normal;
     }
 
-    .modal-content {
+    .modal-card {
         width: 94vw;
         margin-top: 1rem;
         margin-bottom: 1rem;
@@ -1234,6 +1271,15 @@ input[type="search"]::-webkit-search-results-decoration {
         height: 5.375rem;
     }
 
+    .single-column {
+        width: 100%;
+        padding-left: 0;
+    }
+
+    .single-column>.card {
+        width: 43.5625rem;
+        height: 32.25rem;
+    }
 }
 
 /*-------------------------------------------------- tablet sidebar --------------------------------------------------*/
@@ -1376,11 +1422,15 @@ input[type="search"]::-webkit-search-results-decoration {
         width: 90vw;
     }
 
-    .card-container {
+    .main-container {
         padding: 0;
         justify-content: center;
         gap: 1rem;
         top: 157px;
+    }
+
+    .card-container {
+        padding-left: 1.75rem;
     }
 
     .card {
@@ -1506,7 +1556,7 @@ input[type="search"]::-webkit-search-results-decoration {
         margin-top: 0.25rem;
     }
 
-    .modal-content {
+    .modal-card {
         width: 100%;
         margin: 0;
         position: absolute;
@@ -1617,4 +1667,10 @@ input[type="search"]::-webkit-search-results-decoration {
     .modal-game-image-container {
         padding-top: 0.6rem;
     }
+}
+
+.modal-image {
+    width: 11.5rem;
+    height: 6.5rem;
+    flex-shrink: 0;
 }
