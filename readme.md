@@ -13,8 +13,8 @@ It allows users to search games using RAWG.IO API.
 
 ## Screenshots
 
-![App Screenshot](https://prnt.sc/kEAi_1d9XI-c)
-
+![gameArchiveIndex](https://github.com/diegoaom/AltimetrikGameArchiveApp/assets/54308070/9209b2c1-69fc-4558-8b0a-4d4e5fb54a28)
+![gameArchiveModal](https://github.com/diegoaom/AltimetrikGameArchiveApp/assets/54308070/27b9be06-b2ac-4bea-982b-695a9ccb2a92)
 
 ## Deployment
 
