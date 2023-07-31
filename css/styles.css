@@ -867,7 +867,6 @@ input[type="search"]::-webkit-search-results-decoration {
     background-size: cover;
     border-radius: 1.5rem;
     margin-left: 12px;
-    /* javascript */
     margin-top: 2rem;
 }
 

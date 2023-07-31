@@ -6,6 +6,7 @@ const modalDescriptionCard = document.querySelector("#modal-description");
 const closeLogOutModal = () => {
     modalLogOut.style.display = "none";
     modalContainer.style.display = "none";
+    document.body.style.overflow = "auto";
 }
 
 export const logOut = () => {
@@ -44,4 +45,5 @@ export const openLogOutModal = () => {
     modalCard.style.display = "none";
     modalDescriptionCard.style.display = "none";
     logoutModalHandlers();
+    document.body.style.overflow = "hidden";
 }

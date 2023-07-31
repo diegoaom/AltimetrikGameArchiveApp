@@ -221,6 +221,7 @@ const closeModal = () => {
     modalCard.style.display = "none";
     modalLogOut.style.display = "none";
     modalDescriptionCard.style.display = "none";
+    document.body.style.overflow = "auto";
 }
 
 const addCloseModalHandler = () => {
@@ -259,6 +260,7 @@ export const openGameModal = async (id) => {
     modalLogOut.style.display = "none";
     addReadMoreHandler();
     addCloseModalHandler();
+    document.body.style.overflow = "hidden";
 
 }
 
