@@ -1,5 +1,5 @@
 import { platformAppend } from "./modules/platforms.js";
-import { skeletonPlacer, showSkeletonLoader, hideSkeletonLoader } from "./modules/skeleton.js";
+import { skeletonPlacer, showSkeletonLoader } from "./modules/skeleton.js";
 import { appendCards, appendNoResult } from "./modules/card.js";
 import { openLogOutModal, logOut } from "./modules/logout.js";
 import { showLastSearches } from "./modules/lastSearches.js";
