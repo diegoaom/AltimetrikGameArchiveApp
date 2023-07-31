@@ -103,10 +103,6 @@
     margin-bottom: 1rem;
 }
 
-.password-input {
-    
-}
-
 .password-input::-ms-reveal {
     display: none;
 }

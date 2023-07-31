@@ -25,11 +25,11 @@
             <h1 class="login-welcome">Welcome! Log in or register</h1>
             <p class="login-welcome-subtext">Log in to find the games you’re looking for!</p>
             <div class="email-input-container">
-                <input id="email-input" class="login-input" type="email" placeholder="Email">
-                <p class="validation-error-message">Invalid email</p>
+                <input id="email-input" class="login-input" type="email" placeholder="Email" required>
+                <p id="invalid-email" class="validation-error-message">Invalid email</p>
             </div>
             <div class="password-input-container">
-                <input id="password-input" class="login-input password-input" type="password" placeholder="Password">
+                <input id="password-input" class="login-input password-input" type="password" placeholder="Password" required minlength="3">
                 <button id="password-visibility-btn" class="password-visibility-btn">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
@@ -38,7 +38,7 @@
                             fill="#BF5FE1" />
                     </svg>
                 </button>
-                <p class="validation-error-message">Invalid email or password</p>
+                <p id="validation-error-message" class="validation-error-message">Invalid email or password</p>
             </div>
             <div class="remember-section">
                 <div class="remember-left">
