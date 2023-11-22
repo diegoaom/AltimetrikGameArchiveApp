@@ -5,7 +5,7 @@ import { openLogOutModal, logOut } from "./modules/logout.js";
 import { showLastSearches } from "./modules/lastSearches.js";
 
 const RAWG_API_URL = "https://api.rawg.io/api/games";
-export const API_KEY = "95715731c840405fb598b2640a161012";
+export const API_KEY = "null";
 
 export let gamesArray = [];
 
